@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Specifies ECMAScript target version
+    "module": "ESNext", // Use ES module syntax
+    "strict": true, // Enable strict type-checking options
+    "esModuleInterop": true, // Allow default imports from CommonJS modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing
+    "resolveJsonModule": true, // Support importing JSON files
+    "noImplicitAny": false, // Disable 'any' type errors
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Root directory for input files
+    "moduleResolution": "node", // Use Node.js module resolution
+    "allowSyntheticDefaultImports": true, // Support default imports from modules
+    "declaration": true // Generate `.d.ts` files for type declarations
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

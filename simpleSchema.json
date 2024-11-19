@@ -1,0 +1,12 @@
+{
+  "nodes": {
+    "doc": { "content": "block+" },
+    "paragraph": {
+      "content": "inline*",
+      "group": "block",
+      "parseDOM": [{ "tag": "p" }]
+    },
+    "text": { "group": "inline" }
+  },
+  "marks": {}
+}
