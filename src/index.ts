@@ -20,8 +20,6 @@ export declare type JSONContent = {
 
 export function validateProseMirrorContent(prosemirrorDoc: JSONContent) {
   try {
-    // schema check before using it with new Schema
-
     // @ts-ignore
     const schemaRuntime = new Schema(schema);
     const doc = Node.fromJSON(schemaRuntime, prosemirrorDoc);
@@ -51,8 +49,6 @@ app.use(async (ctx, next) => {
 app.use(async (ctx, next) => {
   if (ctx.path === "/validate" && ctx.method === "POST") {
     const content = ctx.request.body;
-
-    console.log("log", content);
 
     // Validate content
     const validationResult = validateProseMirrorContent(content);
@@ -119,6 +115,53 @@ app.use(async (ctx, next) => {
       ctx.body = {
         valid: false,
         message: "Transformation failed.",
+        details: error.message,
+      };
+    }
+
+    return;
+  }
+  await next();
+});
+
+// Traverse specific node types in the ProseMirror document Route
+app.use(async (ctx, next) => {
+  if (ctx.path === "/traverse" && ctx.method === "POST") {
+    const content = ctx.request.body;
+
+    // Validate the ProseMirror document
+    const validationResult = validateProseMirrorContent(content);
+
+    if (!validationResult.valid) {
+      ctx.status = 400;
+      ctx.body = { valid: false, message: validationResult.message };
+      return;
+    }
+
+    const { doc } = validationResult;
+
+    if (!doc) {
+      ctx.status = 400;
+      ctx.body = { valid: false, message: "Document is invalid." };
+      return;
+    }
+
+    try {
+      // Traverse the document
+      const nodes: NodeType["name"][] = [];
+      doc.descendants((node) => {
+        nodes.push(node.type.name);
+      });
+
+      // Return the traversed nodes
+      ctx.status = 200;
+      ctx.body = { valid: true, nodes };
+    } catch (error: any) {
+      // Handle traversal errors
+      ctx.status = 500;
+      ctx.body = {
+        valid: false,
+        message: "Traversal failed.",
         details: error.message,
       };
     }
