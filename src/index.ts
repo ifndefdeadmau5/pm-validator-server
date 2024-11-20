@@ -3,7 +3,14 @@ import bodyParser from "@koa/bodyparser";
 import { Node, Schema, type NodeType } from "prosemirror-model";
 import { Transform } from "prosemirror-transform";
 import schema from "../schema.json" assert { type: "json" };
-// import schema from "../simpleSchema.json" assert { type: "json" };
+import { NodeAttrsRuntime, AttrsByNode, NodeAttrs } from "./types/schema-types";
+
+// Type guard to check if node.type.name exists in NodeAttrsRuntime
+function isNodeWithTypedAttrs<N extends keyof NodeAttrs>(
+  nodeName: string
+): nodeName is N {
+  return NodeAttrsRuntime[nodeName] === true;
+}
 
 export declare type JSONContent = {
   type?: string;
@@ -147,6 +154,32 @@ app.use(async (ctx, next) => {
     }
 
     try {
+      /** Example of accessing typed attributes in a node */
+      doc.descendants((node) => {
+        if (isNodeWithTypedAttrs(node.type.name)) {
+          // Cast node.attrs to the correct AttrsByNode type
+          const attrs = node.attrs as AttrsByNode<typeof node.type.name>;
+
+          // Refine type based on specific node names
+          switch (node.type.name) {
+            case "chart-node":
+              const chartAttrs = attrs as AttrsByNode<"chart-node">;
+              console.log(chartAttrs.id); // Autocompletion now works
+              console.log(chartAttrs.chartType);
+              console.log(chartAttrs.width);
+              break;
+
+            case "paragraph":
+              const paragraphAttrs = attrs as AttrsByNode<"paragraph">;
+              console.log(paragraphAttrs.id); // Autocompletion now works
+              break;
+
+            // Add other specific cases here
+          }
+        }
+      });
+      /** Example end  */
+
       // Traverse the document
       const nodes: NodeType["name"][] = [];
       doc.descendants((node) => {
