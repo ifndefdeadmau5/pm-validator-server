@@ -22,17 +22,15 @@ function generateTypes(schema: any): string {
             : typeof defaultValue === "object"
             ? "any"
             : typeof defaultValue;
-          return `${attrName}: ${type};`;
+          return `\"${attrName}\": ${type};`;
         })
         .join("\n    ");
-      return `${nodeName}: {
-    ${attrsType || "id: never;"}
-  };`;
+      return `\"${nodeName}\": {\n    ${attrsType || '"id": never;'}\n  };`;
     })
     .join("\n  ");
 
   const runtimeNodeTypes = Object.keys(nodes)
-    .map((nodeName) => `"${nodeName}": true`)
+    .map((nodeName) => `\"${nodeName}\": true`)
     .join(",\n  ");
 
   return `

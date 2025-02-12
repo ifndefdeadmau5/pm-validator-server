@@ -1,0 +1,1655 @@
+{
+  "nodes": {
+    "paragraph": {
+      "content": "inline*",
+      "group": "block",
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "indent": {
+          "default": 0
+        },
+        "textAlign": {}
+      },
+      "parseDOM": [
+        {
+          "tag": "p"
+        }
+      ]
+    },
+    "multipleChoiceItemParagraph": {
+      "content": "inline*",
+      "group": "block",
+      "parseDOM": [
+        {
+          "tag": "p[data-type=\"multipleChoiceItemParagraph\"]"
+        }
+      ]
+    },
+    "shortAnswerItemParagraph": {
+      "content": "text*",
+      "group": "block",
+      "parseDOM": []
+    },
+    "shortAnswerAlternativeItemParagraph": {
+      "content": "text*",
+      "group": "block",
+      "attrs": {
+        "id": {
+          "default": null
+        }
+      },
+      "parseDOM": []
+    },
+    "targetingQuiz": {
+      "content": "text*",
+      "group": "inline",
+      "inline": true,
+      "atom": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "index": {
+          "default": null
+        },
+        "text": {
+          "default": null
+        },
+        "isTarget": {
+          "default": null
+        },
+        "items": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "span[data-type=\"targetingQuiz\"]"
+        }
+      ]
+    },
+    "targetingQuizOption": {
+      "content": "text*",
+      "group": "inline",
+      "inline": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "text": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "span[data-type=\"targetingQuizOption\"]"
+        }
+      ]
+    },
+    "blankQuiz": {
+      "content": "text*",
+      "group": "inline",
+      "inline": true,
+      "atom": true,
+      "selectable": true,
+      "isolating": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "options": {
+          "default": []
+        },
+        "index": {
+          "default": 0
+        },
+        "init": {
+          "default": true
+        },
+        "singleOption": {
+          "default": true
+        },
+        "studentAnswer": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "span[data-type=\"blankQuiz\"]"
+        }
+      ]
+    },
+    "blankQuizV2": {
+      "content": "text*",
+      "group": "inline",
+      "inline": true,
+      "atom": true,
+      "selectable": true,
+      "isolating": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "alternativeAnswers": {
+          "default": []
+        },
+        "isMathFormula": {
+          "default": false
+        },
+        "options": {
+          "default": []
+        },
+        "index": {
+          "default": 0
+        },
+        "init": {
+          "default": false
+        },
+        "singleOption": {
+          "default": true
+        },
+        "studentAnswer": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "span[data-type=\"blankQuizV2\"]"
+        }
+      ]
+    },
+    "matchingQuiz": {
+      "content": "text*",
+      "group": "inline",
+      "inline": true,
+      "atom": true,
+      "selectable": true,
+      "isolating": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "options": {
+          "default": []
+        },
+        "index": {
+          "default": 0
+        },
+        "init": {
+          "default": false
+        },
+        "singleOption": {
+          "default": false
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "span[data-type=\"matchingQuiz\"]"
+        }
+      ]
+    },
+    "selectionQuiz": {
+      "content": "text*",
+      "group": "inline",
+      "inline": true,
+      "atom": true,
+      "selectable": true,
+      "isolating": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "options": {
+          "default": []
+        },
+        "index": {
+          "default": 0
+        },
+        "open": {
+          "default": true
+        },
+        "pending": {
+          "default": true
+        },
+        "deleted": {
+          "default": false
+        },
+        "originalText": {
+          "default": ""
+        },
+        "studentAnswer": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "span[data-type=\"selectionQuiz\"]"
+        }
+      ]
+    },
+    "blockquote": {
+      "content": "block+",
+      "group": "block",
+      "defining": true,
+      "parseDOM": [
+        {
+          "tag": "blockquote"
+        }
+      ]
+    },
+    "codeBlock": {
+      "content": "text*",
+      "marks": "",
+      "group": "block",
+      "code": true,
+      "defining": true,
+      "attrs": {
+        "language": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "pre",
+          "preserveWhitespace": "full"
+        }
+      ]
+    },
+    "doc": {
+      "content": "block+"
+    },
+    "hardBreak": {
+      "group": "inline",
+      "inline": true,
+      "selectable": false,
+      "parseDOM": [
+        {
+          "tag": "br"
+        }
+      ]
+    },
+    "horizontalRule": {
+      "group": "block",
+      "parseDOM": [
+        {
+          "tag": "hr"
+        }
+      ]
+    },
+    "listItem": {
+      "content": "paragraph block*",
+      "defining": true,
+      "parseDOM": [
+        {
+          "tag": "li"
+        }
+      ]
+    },
+    "text": {
+      "group": "inline"
+    },
+    "inlineImage": {
+      "group": "inline",
+      "inline": true,
+      "selectable": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "src": {
+          "default": null
+        },
+        "alt": {
+          "default": ""
+        },
+        "title": {
+          "default": null
+        },
+        "width": {
+          "default": null
+        },
+        "height": {
+          "default": null
+        },
+        "ratio": {
+          "default": 1
+        },
+        "script": {
+          "default": null
+        },
+        "file": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "img[data-inline-image]",
+          "priority": 100
+        }
+      ]
+    },
+    "heading": {
+      "content": "inline*",
+      "group": "block",
+      "draggable": true,
+      "defining": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "data-toc-id": {
+          "default": null
+        },
+        "textAlign": {},
+        "level": {
+          "default": 1
+        },
+        "placeholder": {
+          "default": "insert content"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "h1",
+          "attrs": {
+            "level": 1
+          }
+        },
+        {
+          "tag": "h2",
+          "attrs": {
+            "level": 2
+          }
+        }
+      ]
+    },
+    "fileUploader": {
+      "group": "block",
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "src": {
+          "default": null
+        },
+        "name": {
+          "default": null
+        },
+        "isInsertMiddleOfText": {
+          "default": false
+        },
+        "mousePosition": {
+          "default": null
+        },
+        "alt": {
+          "default": null
+        },
+        "nodeAttrs": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "react-file-upload-component"
+        },
+        {
+          "tag": "img[src]"
+        }
+      ]
+    },
+    "file": {
+      "group": "block",
+      "inline": false,
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "parentNodeId": {
+          "default": ""
+        },
+        "src": {
+          "default": null
+        },
+        "name": {
+          "default": null
+        },
+        "fileSize": {
+          "default": 0
+        },
+        "type": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "react-file-component"
+        }
+      ]
+    },
+    "image": {
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "src": {
+          "default": null
+        },
+        "alt": {
+          "default": null
+        },
+        "title": {
+          "default": null
+        },
+        "data-uploaded": {
+          "default": true
+        },
+        "width": {},
+        "height": {},
+        "maxWidth": {
+          "default": 100
+        },
+        "alignment": {
+          "default": "center"
+        },
+        "script": {
+          "default": null
+        },
+        "imagePreview": {
+          "default": false
+        },
+        "file": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "img[src]"
+        },
+        {
+          "tag": "img[src][data-lazy-src]"
+        },
+        {
+          "tag": "img[src][data-uploaded]"
+        }
+      ]
+    },
+    "columns": {
+      "content": "column+",
+      "group": "block",
+      "draggable": true,
+      "isolating": true,
+      "attrs": {
+        "id": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"columns\"]"
+        }
+      ]
+    },
+    "column": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "width": {
+          "default": 0
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"column\"]"
+        }
+      ]
+    },
+    "audio": {
+      "content": "block*",
+      "group": "block",
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "audioSrc": {
+          "default": null
+        },
+        "duration": {
+          "default": null
+        },
+        "subtitleFileIds": {
+          "default": null
+        },
+        "subtitleFiles": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "audio"
+        }
+      ]
+    },
+    "video": {
+      "content": "block*",
+      "group": "block",
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "parentNodeId": {
+          "default": null
+        },
+        "src": {
+          "default": null
+        },
+        "duration": {
+          "default": null
+        },
+        "subtitleFileIds": {
+          "default": null
+        },
+        "subtitleFiles": {
+          "default": []
+        },
+        "watchTime": {
+          "default": null
+        },
+        "playedPercent": {
+          "default": null
+        },
+        "status": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"video\"]"
+        }
+      ]
+    },
+    "math_inline": {
+      "content": "text*",
+      "group": "inline math",
+      "inline": true,
+      "atom": true,
+      "code": true,
+      "parseDOM": [
+        {
+          "tag": "math_inline"
+        }
+      ]
+    },
+    "math_display": {
+      "content": "text*",
+      "group": "block math",
+      "atom": true,
+      "code": true,
+      "parseDOM": [
+        {
+          "tag": "math_display"
+        }
+      ]
+    },
+    "mathAnswerBlock": {
+      "content": "text*",
+      "group": "block",
+      "atom": true,
+      "code": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "latex": {
+          "default": ""
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "math-answer"
+        }
+      ]
+    },
+    "chart-node": {
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "chartType": {
+          "default": null
+        },
+        "width": {
+          "default": null
+        },
+        "height": {
+          "default": null
+        },
+        "margin": {
+          "default": null
+        },
+        "xStep": {
+          "default": null
+        },
+        "xLabel": {
+          "default": null
+        },
+        "yLabel": {
+          "default": null
+        },
+        "xMin": {
+          "default": null
+        },
+        "xMax": {
+          "default": null
+        },
+        "showXBreakScale": {
+          "default": null
+        },
+        "showYBreakScale": {
+          "default": null
+        },
+        "yBreakScaleStart": {
+          "default": null
+        },
+        "yBreakScaleEnd": {
+          "default": null
+        },
+        "yStep": {
+          "default": null
+        },
+        "ySnapGap": {
+          "default": null
+        },
+        "yMax": {
+          "default": null
+        },
+        "xUnit": {
+          "default": null
+        },
+        "yUnit": {
+          "default": null
+        },
+        "title": {
+          "default": null
+        },
+        "correctAnswers": {
+          "default": null
+        },
+        "studentAnswers": {
+          "default": null
+        },
+        "categories": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "chart-node"
+        }
+      ]
+    },
+    "graph": {
+      "group": "block",
+      "inline": false,
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "mode": {
+          "default": null
+        },
+        "studentAnswers": {
+          "default": null
+        },
+        "answerBlockAnswerResult": {
+          "default": null
+        },
+        "graphData": {
+          "default": {
+            "coordinateOriginShow": true,
+            "grid": {
+              "x": {
+                "show": true,
+                "step": 1
+              },
+              "y": {
+                "show": true,
+                "step": 1
+              }
+            },
+            "axis": {
+              "x": {
+                "min": -6,
+                "max": 6,
+                "step": 1,
+                "showAxis": true,
+                "showLabel": true,
+                "label": "x",
+                "showNumber": true
+              },
+              "y": {
+                "min": -6,
+                "max": 6,
+                "step": 1,
+                "showAxis": true,
+                "showLabel": true,
+                "label": "y",
+                "showNumber": true
+              }
+            },
+            "objects": [],
+            "interactions": [
+              {
+                "interactionType": "FIND_COORDINATE",
+                "correct": {
+                  "coordinates": [{}],
+                  "interactionType": "FIND_COORDINATE",
+                  "interactionSubType": "DOT_POINT"
+                },
+                "actionRangeOption": "UNLIMITED",
+                "objectIds": [],
+                "exposureOptions": ["COORDINATE"],
+                "interactionSubType": "DOT_POINT",
+                "snap": {
+                  "x": 1,
+                  "y": 1
+                },
+                "__typename": "GraphDotPointInteraction"
+              }
+            ]
+          }
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "parseHTML": {
+          "default": null
+        },
+        "renderHTML": {
+          "default": null
+        }
+      }
+    },
+    "multipleChoiceList": {
+      "content": "multipleChoiceItem+",
+      "group": "block",
+      "draggable": true,
+      "isolating": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "listItemStyle": {
+          "default": "circle-decimal"
+        },
+        "checkPolicy": {
+          "default": "CHECK_ALL"
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "ol[data-type=\"multipleChoiceList\"]",
+          "priority": 51
+        }
+      ]
+    },
+    "multipleChoiceWithoutGradingList": {
+      "content": "multipleChoiceItem+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "listItemStyle": {
+          "default": "circle-decimal"
+        },
+        "enableSingleSelect": {
+          "default": true
+        },
+        "hideHelpText": {
+          "default": false
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "couldBeManuallyGraded": {
+          "default": false
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "ul[data-type=\"multipleChoiceWithoutGradingList\"]",
+          "priority": 51
+        }
+      ]
+    },
+    "multipleChoiceItem": {
+      "content": "(multipleChoiceItemParagraph|fileUploader?|image?)+",
+      "group": "block",
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "checked": {
+          "default": false
+        },
+        "studentChecked": {},
+        "isGrading": {
+          "default": true
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "li[data-type=\"multipleChoiceItem\"]",
+          "priority": 51
+        }
+      ]
+    },
+    "shortAnswerList": {
+      "content": "shortAnswerItem+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "listItemStyle": {
+          "default": "none"
+        },
+        "educationLevel": {
+          "default": "high"
+        },
+        "isAnswerCountHidden": {
+          "default": false
+        },
+        "isAnswersJudgedInAnyOrder": {
+          "default": false
+        },
+        "isIgnoreSpacing": {
+          "default": true
+        },
+        "isReadyToSubmit": {
+          "default": false
+        },
+        "studentAnswers": {
+          "default": null
+        },
+        "studentAnswerTypes": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "ul[data-type=\"shortAnswerList\"]",
+          "priority": 51
+        }
+      ]
+    },
+    "shortAnswerAlternativeItem": {
+      "content": "(shortAnswerAlternativeItemParagraph|mathAnswerBlock)+",
+      "attrs": {
+        "id": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "li[data-type=\"shortAnswerAlternativeItem\"]",
+          "priority": 51
+        }
+      ]
+    },
+    "shortAnswerAlternativeList": {
+      "content": "shortAnswerAlternativeItem*",
+      "attrs": {
+        "id": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "li[data-type=\"shortAnswerAlternativeList\"]",
+          "priority": 51
+        }
+      ]
+    },
+    "shortAnswerItem": {
+      "content": "(shortAnswerItemParagraph|mathAnswerBlock) shortAnswerAlternativeList",
+      "group": "block",
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "mode": {
+          "default": "text"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "li[data-type=\"shortAnswerItem\"]",
+          "priority": 51
+        }
+      ]
+    },
+    "targetingQuizBlock": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "checkPolicy": {
+          "default": null
+        },
+        "solution": {
+          "default": null
+        },
+        "studentAnswers": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"targeting-quiz-block\"]"
+        }
+      ]
+    },
+    "blankQuizBlock": {
+      "content": "block+|shortAnswerItem+|paragraph+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "hintOption": {
+          "default": null
+        },
+        "studentAnswers": {
+          "default": null
+        },
+        "solution": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"blank-quiz-block\"]"
+        }
+      ]
+    },
+    "blankQuizV2Block": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "hintOption": {
+          "default": null
+        },
+        "blankStyle": {
+          "default": null
+        },
+        "isIgnoreSpacing": {
+          "default": true
+        },
+        "studentAnswers": {
+          "default": null
+        },
+        "solution": {
+          "default": null
+        },
+        "educationLevel": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "orderlessBundles": {
+          "default": [[]]
+        },
+        "orderlessIndexes": {
+          "default": [[]]
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"blank-quiz-block-v2\"]"
+        }
+      ]
+    },
+    "matchingQuizBlock": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "hintOption": {
+          "default": null
+        },
+        "studentAnswers": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "solution": {
+          "default": false
+        },
+        "isAnswerRandomlyPlaced": {
+          "default": true
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"matching-quiz-block\"]"
+        }
+      ]
+    },
+    "selectionQuizBlock": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "shuffleOption": {
+          "default": null
+        },
+        "proofReading": {
+          "default": null
+        },
+        "solution": {
+          "default": null
+        },
+        "incomplete": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"selection-quiz-block\"]"
+        }
+      ]
+    },
+    "essay": {
+      "content": "block*",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "studentAnswer": {
+          "default": null
+        },
+        "enableEmptyStudentAnswer": {
+          "default": false
+        },
+        "hideHelpText": {
+          "default": false
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"essay-node\"]"
+        }
+      ]
+    },
+    "shortAnswerWithoutGrading": {
+      "content": "block*",
+      "group": "block",
+      "inline": false,
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "textAlign": {},
+        "studentAnswer": {
+          "default": null
+        },
+        "enableEmptyStudentAnswer": {
+          "default": false
+        },
+        "hideHelpText": {
+          "default": false
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "couldBeManuallyGraded": {
+          "default": false
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"shortAnswerWithoutGrading-node\"]"
+        }
+      ]
+    },
+    "explanation": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"explanation-node\"]"
+        }
+      ]
+    },
+    "speaking": {
+      "content": "block*",
+      "group": "block",
+      "inline": false,
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "sttId": {
+          "default": null
+        },
+        "sttResult": {
+          "default": null
+        },
+        "src": {
+          "default": null
+        },
+        "enableTranscription": {
+          "default": null
+        },
+        "maxRecordTime": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "couldBeManuallyGraded": {
+          "default": false
+        },
+        "status": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"speaking-node\"]"
+        }
+      ]
+    },
+    "englishParagraphBlock": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "parentNodeId": {
+          "default": null
+        },
+        "src": {
+          "default": null
+        },
+        "previousTextContent": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"englishParagraphBlock-node\"]"
+        }
+      ]
+    },
+    "classEmbed": {
+      "content": "block*",
+      "group": "block",
+      "inline": false,
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "couldBeManuallyGraded": {
+          "default": false
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"classEmbed\"]"
+        }
+      ]
+    },
+    "toggle": {
+      "content": "toggleSummary toggleContent",
+      "group": "block",
+      "draggable": true,
+      "defining": true,
+      "attrs": {
+        "id": {
+          "default": ""
+        },
+        "a11yId": {
+          "default": ""
+        },
+        "parentNodeId": {
+          "default": ""
+        },
+        "open": {
+          "default": true
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"toggle\"]"
+        }
+      ]
+    },
+    "toggleSummary": {
+      "content": "inline*",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "open": {
+          "default": true
+        },
+        "hover": {
+          "default": false
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"toggleSummary\"]"
+        }
+      ]
+    },
+    "toggleContent": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "open": {
+          "default": true
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"toggleContent\"]"
+        }
+      ]
+    },
+    "sticky": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"sticky\"]"
+        }
+      ]
+    },
+    "externalEmbedded": {
+      "content": "block*",
+      "group": "block",
+      "inline": false,
+      "atom": true,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "imbeddedType": {
+          "default": null
+        },
+        "algeoMathOption": {
+          "default": null
+        },
+        "linkSrc": {
+          "default": ""
+        },
+        "customActivityId": {
+          "default": ""
+        },
+        "mode": {},
+        "learningActivityId": {},
+        "fileId": {
+          "default": ""
+        },
+        "algeoMathStudentAnswerUrl": {
+          "default": null
+        },
+        "isInStudySyncScreen": {},
+        "blockStyle": {
+          "default": "compact"
+        },
+        "couldBeManuallyGraded": {
+          "default": false
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"externalEmbedded\"]"
+        }
+      ]
+    },
+    "drawing": {
+      "content": "block+",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "hasStudentDrawing": {
+          "default": false
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "couldBeManuallyGraded": {
+          "default": false
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "div[data-type=\"drawing-node\"]"
+        }
+      ]
+    },
+    "lineMatching": {
+      "content": "(lineMatchingItemContainer)+",
+      "group": "block",
+      "isolating": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "edges": {
+          "default": []
+        },
+        "studentEdges": {
+          "default": []
+        },
+        "solution": {
+          "default": false
+        },
+        "isCorrect": {
+          "default": false
+        },
+        "blockStyle": {
+          "default": "compact"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "ol[data-type=\"lineMatching\"]"
+        }
+      ]
+    },
+    "lineMatchingItemContainer": {
+      "content": "(lineMatchingItem)+",
+      "group": "block",
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "listItemStyle": {
+          "default": "circle-decimal"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "li[data-type=\"lineMatchingItemContainer\"]"
+        }
+      ]
+    },
+    "lineMatchingItem": {
+      "content": "(paragraph|fileUploader?|image?)+",
+      "group": "block",
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "selected": {
+          "default": false
+        },
+        "studentSelected": {
+          "default": false
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "li[data-type=\"lineMatchingItem\"]"
+        }
+      ]
+    }
+  },
+  "marks": {
+    "link": {
+      "inclusive": true,
+      "attrs": {
+        "href": {
+          "default": null
+        },
+        "target": {
+          "default": "_blank"
+        },
+        "rel": {
+          "default": "noopener noreferrer nofollow"
+        },
+        "class": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "a[href]:not([href *= \"javascript:\" i])"
+        }
+      ]
+    },
+    "linkInserting": {},
+    "bold": {
+      "parseDOM": [
+        {
+          "tag": "strong"
+        },
+        {
+          "tag": "b"
+        },
+        {
+          "style": "font-weight"
+        }
+      ]
+    },
+    "code": {
+      "excludes": "_",
+      "code": true,
+      "parseDOM": [
+        {
+          "tag": "code"
+        }
+      ]
+    },
+    "italic": {
+      "parseDOM": [
+        {
+          "tag": "em"
+        },
+        {
+          "tag": "i"
+        },
+        {
+          "style": "font-style=italic"
+        }
+      ]
+    },
+    "strike": {
+      "parseDOM": [
+        {
+          "tag": "s"
+        },
+        {
+          "tag": "del"
+        },
+        {
+          "tag": "strike"
+        },
+        {
+          "style": "text-decoration",
+          "consuming": false
+        }
+      ]
+    },
+    "textStyle": {
+      "attrs": {
+        "fontSize": {},
+        "color": {},
+        "fontFamily": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "span"
+        }
+      ]
+    },
+    "translateNoSpan": {
+      "group": "inline",
+      "attrs": {
+        "translate": {
+          "default": "no"
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "span.no-translate-mark[translate=\"no\"]"
+        }
+      ]
+    },
+    "nowrap": {
+      "parseDOM": [
+        {
+          "tag": "span.nowrap-mark"
+        }
+      ]
+    },
+    "underline": {
+      "parseDOM": [
+        {
+          "tag": "u"
+        },
+        {
+          "style": "text-decoration",
+          "consuming": false
+        }
+      ]
+    },
+    "highlight": {
+      "attrs": {
+        "color": {
+          "default": null
+        }
+      },
+      "parseDOM": [
+        {
+          "tag": "mark"
+        }
+      ]
+    }
+  }
+}

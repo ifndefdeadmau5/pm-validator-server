@@ -1,4 +1,9 @@
 
+
+## Export ProseMirror Schema from Frontend
+![Getting ProseMirror Schema from Frontend](getting_PM_schema.png)
+
+
 ```ts
 import { Editor } from '@tiptap/core';
 

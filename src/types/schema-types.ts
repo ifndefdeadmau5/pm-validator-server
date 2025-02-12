@@ -1,6 +1,8 @@
 export type NodeAttrs = {
   paragraph: {
-    id: never;
+    id: any;
+    indent: number;
+    textAlign: undefined;
   };
   multipleChoiceItemParagraph: {
     id: never;
@@ -13,6 +15,7 @@ export type NodeAttrs = {
   };
   targetingQuiz: {
     id: any;
+    textAlign: undefined;
     index: any;
     text: any;
     isTarget: any;
@@ -24,6 +27,7 @@ export type NodeAttrs = {
   };
   blankQuiz: {
     id: any;
+    textAlign: undefined;
     options: any[];
     index: number;
     init: boolean;
@@ -32,6 +36,7 @@ export type NodeAttrs = {
   };
   blankQuizV2: {
     id: any;
+    textAlign: undefined;
     alternativeAnswers: any[];
     isMathFormula: boolean;
     options: any[];
@@ -42,6 +47,7 @@ export type NodeAttrs = {
   };
   matchingQuiz: {
     id: any;
+    textAlign: undefined;
     options: any[];
     index: number;
     init: boolean;
@@ -49,6 +55,7 @@ export type NodeAttrs = {
   };
   selectionQuiz: {
     id: any;
+    textAlign: undefined;
     options: any[];
     index: number;
     open: boolean;
@@ -78,9 +85,21 @@ export type NodeAttrs = {
   text: {
     id: never;
   };
+  inlineImage: {
+    id: any;
+    src: any;
+    alt: string;
+    title: any;
+    width: any;
+    height: any;
+    ratio: number;
+    script: any;
+    file: any;
+  };
   heading: {
     id: any;
     "data-toc-id": any;
+    textAlign: undefined;
     level: number;
     placeholder: string;
   };
@@ -99,12 +118,7 @@ export type NodeAttrs = {
     name: any;
     fileSize: number;
     type: any;
-  };
-  imageUploader: {
-    src: any;
-    alt: any;
-    title: any;
-    isInsertMiddleOfText: boolean;
+    blockStyle: string;
   };
   image: {
     id: any;
@@ -112,12 +126,20 @@ export type NodeAttrs = {
     alt: any;
     title: any;
     "data-uploaded": boolean;
-    width: number;
-    height: number;
+    width: undefined;
+    height: undefined;
     maxWidth: number;
     alignment: string;
     script: any;
     imagePreview: boolean;
+    file: any;
+  };
+  columns: {
+    id: any;
+  };
+  column: {
+    id: any;
+    width: number;
   };
   audio: {
     id: any;
@@ -125,6 +147,7 @@ export type NodeAttrs = {
     duration: any;
     subtitleFileIds: any;
     subtitleFiles: any;
+    blockStyle: string;
   };
   video: {
     id: any;
@@ -132,10 +155,11 @@ export type NodeAttrs = {
     src: any;
     duration: any;
     subtitleFileIds: any;
-    subtitleFiles: any;
+    subtitleFiles: any[];
     watchTime: any;
     playedPercent: any;
     status: any;
+    blockStyle: string;
   };
   math_inline: {
     id: never;
@@ -171,13 +195,15 @@ export type NodeAttrs = {
     correctAnswers: any;
     studentAnswers: any;
     categories: any;
+    blockStyle: string;
   };
   graph: {
     id: any;
     mode: any;
     studentAnswers: any;
-    notNullAnswerResult: any;
+    answerBlockAnswerResult: any;
     graphData: any;
+    blockStyle: string;
     parseHTML: any;
     renderHTML: any;
   };
@@ -185,17 +211,20 @@ export type NodeAttrs = {
     id: any;
     listItemStyle: string;
     checkPolicy: string;
+    blockStyle: string;
   };
   multipleChoiceWithoutGradingList: {
     id: any;
     listItemStyle: string;
     enableSingleSelect: boolean;
     hideHelpText: boolean;
+    blockStyle: string;
+    couldBeManuallyGraded: boolean;
   };
   multipleChoiceItem: {
     id: any;
     checked: boolean;
-    studentChecked: boolean;
+    studentChecked: undefined;
     isGrading: boolean;
   };
   shortAnswerList: {
@@ -204,9 +233,11 @@ export type NodeAttrs = {
     educationLevel: string;
     isAnswerCountHidden: boolean;
     isAnswersJudgedInAnyOrder: boolean;
+    isIgnoreSpacing: boolean;
     isReadyToSubmit: boolean;
     studentAnswers: any;
     studentAnswerTypes: any;
+    blockStyle: string;
   };
   shortAnswerAlternativeItem: {
     id: any;
@@ -220,69 +251,94 @@ export type NodeAttrs = {
   };
   targetingQuizBlock: {
     id: any;
+    textAlign: undefined;
     checkPolicy: any;
     solution: any;
     studentAnswers: any;
+    blockStyle: string;
   };
   blankQuizBlock: {
     id: any;
+    textAlign: undefined;
     hintOption: any;
     studentAnswers: any;
     solution: any;
+    blockStyle: string;
   };
   blankQuizV2Block: {
     id: any;
+    textAlign: undefined;
     hintOption: any;
     blankStyle: any;
+    isIgnoreSpacing: boolean;
     studentAnswers: any;
     solution: any;
     educationLevel: any;
+    blockStyle: string;
+    orderlessBundles: any[];
+    orderlessIndexes: any[];
   };
   matchingQuizBlock: {
     id: any;
+    textAlign: undefined;
     hintOption: any;
     studentAnswers: any;
-    solution: any;
+    blockStyle: string;
+    solution: boolean;
+    isAnswerRandomlyPlaced: boolean;
   };
   selectionQuizBlock: {
     id: any;
+    textAlign: undefined;
     shuffleOption: any;
     proofReading: any;
     solution: any;
     incomplete: any;
+    blockStyle: string;
   };
   essay: {
     id: any;
+    textAlign: undefined;
     studentAnswer: any;
     enableEmptyStudentAnswer: boolean;
     hideHelpText: boolean;
+    blockStyle: string;
   };
   shortAnswerWithoutGrading: {
     id: any;
+    textAlign: undefined;
     studentAnswer: any;
     enableEmptyStudentAnswer: boolean;
     hideHelpText: boolean;
+    blockStyle: string;
+    couldBeManuallyGraded: boolean;
   };
   explanation: {
     id: any;
+    blockStyle: string;
   };
   speaking: {
     id: any;
     sttId: any;
     sttResult: any;
     src: any;
-    status: any;
     enableTranscription: any;
     maxRecordTime: any;
+    blockStyle: string;
+    couldBeManuallyGraded: boolean;
+    status: any;
   };
   englishParagraphBlock: {
     id: any;
     parentNodeId: any;
     src: any;
     previousTextContent: any;
+    blockStyle: string;
   };
   classEmbed: {
     id: any;
+    blockStyle: string;
+    couldBeManuallyGraded: boolean;
   };
   toggle: {
     id: string;
@@ -306,17 +362,38 @@ export type NodeAttrs = {
     id: any;
     imbeddedType: any;
     algeoMathOption: any;
-    linkSrc: any;
+    linkSrc: string;
     customActivityId: string;
-    mode: string;
-    learningActivityId: string;
+    mode: undefined;
+    learningActivityId: undefined;
     fileId: string;
     algeoMathStudentAnswerUrl: any;
-    isInStudySyncScreen: boolean;
+    isInStudySyncScreen: undefined;
+    blockStyle: string;
+    couldBeManuallyGraded: boolean;
   };
   drawing: {
     id: any;
     hasStudentDrawing: boolean;
+    blockStyle: string;
+    couldBeManuallyGraded: boolean;
+  };
+  lineMatching: {
+    id: any;
+    edges: any[];
+    studentEdges: any[];
+    solution: boolean;
+    isCorrect: boolean;
+    blockStyle: string;
+  };
+  lineMatchingItemContainer: {
+    id: any;
+    listItemStyle: string;
+  };
+  lineMatchingItem: {
+    id: any;
+    selected: boolean;
+    studentSelected: boolean;
   };
 };
 
@@ -338,11 +415,13 @@ export const NodeAttrsRuntime: Record<string, boolean> = {
   horizontalRule: true,
   listItem: true,
   text: true,
+  inlineImage: true,
   heading: true,
   fileUploader: true,
   file: true,
-  imageUploader: true,
   image: true,
+  columns: true,
+  column: true,
   audio: true,
   video: true,
   math_inline: true,
@@ -374,6 +453,9 @@ export const NodeAttrsRuntime: Record<string, boolean> = {
   sticky: true,
   externalEmbedded: true,
   drawing: true,
+  lineMatching: true,
+  lineMatchingItemContainer: true,
+  lineMatchingItem: true,
 };
 
 export type AttrsByNode<N extends keyof NodeAttrs> = NodeAttrs[N];

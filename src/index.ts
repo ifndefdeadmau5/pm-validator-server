@@ -2,7 +2,7 @@ import Koa from "koa";
 import bodyParser from "@koa/bodyparser";
 import { Node, Schema, type NodeType } from "prosemirror-model";
 import { Transform } from "prosemirror-transform";
-import schema from "../schema.json" assert { type: "json" };
+import schema from "./schema.json" with { type: "json" };
 import { NodeAttrsRuntime, AttrsByNode, NodeAttrs } from "./types/schema-types";
 
 // Type guard to check if node.type.name exists in NodeAttrsRuntime
