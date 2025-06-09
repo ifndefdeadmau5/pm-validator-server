@@ -10,27 +10,24 @@
         "indent": {
           "default": 0
         },
-        "textAlign": {}
-      },
-      "parseDOM": [
-        {
-          "tag": "p"
+        "textAlign": {},
+        "verticalAlign": {
+          "default": null
         }
-      ]
+      }
     },
     "multipleChoiceItemParagraph": {
       "content": "inline*",
       "group": "block",
-      "parseDOM": [
-        {
-          "tag": "p[data-type=\"multipleChoiceItemParagraph\"]"
+      "attrs": {
+        "verticalAlign": {
+          "default": null
         }
-      ]
+      }
     },
     "shortAnswerItemParagraph": {
       "content": "text*",
-      "group": "block",
-      "parseDOM": []
+      "group": "block"
     },
     "shortAnswerAlternativeItemParagraph": {
       "content": "text*",
@@ -39,8 +36,7 @@
         "id": {
           "default": null
         }
-      },
-      "parseDOM": []
+      }
     },
     "targetingQuiz": {
       "content": "text*",
@@ -64,12 +60,7 @@
         "items": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "span[data-type=\"targetingQuiz\"]"
-        }
-      ]
+      }
     },
     "targetingQuizOption": {
       "content": "text*",
@@ -82,12 +73,7 @@
         "text": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "span[data-type=\"targetingQuizOption\"]"
-        }
-      ]
+      }
     },
     "blankQuiz": {
       "content": "text*",
@@ -116,12 +102,7 @@
         "studentAnswer": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "span[data-type=\"blankQuiz\"]"
-        }
-      ]
+      }
     },
     "blankQuizV2": {
       "content": "text*",
@@ -156,12 +137,7 @@
         "studentAnswer": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "span[data-type=\"blankQuizV2\"]"
-        }
-      ]
+      }
     },
     "matchingQuiz": {
       "content": "text*",
@@ -178,6 +154,9 @@
         "options": {
           "default": []
         },
+        "isMathFormula": {
+          "default": false
+        },
         "index": {
           "default": 0
         },
@@ -187,12 +166,7 @@
         "singleOption": {
           "default": false
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "span[data-type=\"matchingQuiz\"]"
-        }
-      ]
+      }
     },
     "selectionQuiz": {
       "content": "text*",
@@ -227,22 +201,12 @@
         "studentAnswer": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "span[data-type=\"selectionQuiz\"]"
-        }
-      ]
+      }
     },
     "blockquote": {
       "content": "block+",
       "group": "block",
-      "defining": true,
-      "parseDOM": [
-        {
-          "tag": "blockquote"
-        }
-      ]
+      "defining": true
     },
     "codeBlock": {
       "content": "text*",
@@ -254,13 +218,7 @@
         "language": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "pre",
-          "preserveWhitespace": "full"
-        }
-      ]
+      }
     },
     "doc": {
       "content": "block+"
@@ -268,29 +226,14 @@
     "hardBreak": {
       "group": "inline",
       "inline": true,
-      "selectable": false,
-      "parseDOM": [
-        {
-          "tag": "br"
-        }
-      ]
+      "selectable": false
     },
     "horizontalRule": {
-      "group": "block",
-      "parseDOM": [
-        {
-          "tag": "hr"
-        }
-      ]
+      "group": "block"
     },
     "listItem": {
       "content": "paragraph block*",
-      "defining": true,
-      "parseDOM": [
-        {
-          "tag": "li"
-        }
-      ]
+      "defining": true
     },
     "text": {
       "group": "inline"
@@ -328,13 +271,7 @@
         "file": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "img[data-inline-image]",
-          "priority": 100
-        }
-      ]
+      }
     },
     "heading": {
       "content": "inline*",
@@ -354,22 +291,14 @@
         },
         "placeholder": {
           "default": "insert content"
-        }
-      },
-      "parseDOM": [
-        {
-          "tag": "h1",
-          "attrs": {
-            "level": 1
-          }
         },
-        {
-          "tag": "h2",
-          "attrs": {
-            "level": 2
-          }
+        "isNewHeading": {
+          "default": false
+        },
+        "verticalAlign": {
+          "default": null
         }
-      ]
+      }
     },
     "fileUploader": {
       "group": "block",
@@ -394,15 +323,26 @@
         "nodeAttrs": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "react-file-upload-component"
+      }
+    },
+    "inlineFileUploader": {
+      "group": "inline",
+      "inline": true,
+      "atom": true,
+      "attrs": {
+        "src": {
+          "default": null
         },
-        {
-          "tag": "img[src]"
+        "name": {
+          "default": null
+        },
+        "alt": {
+          "default": null
+        },
+        "nodeAttrs": {
+          "default": null
         }
-      ]
+      }
     },
     "file": {
       "group": "block",
@@ -431,12 +371,7 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "react-file-component"
-        }
-      ]
+      }
     },
     "image": {
       "group": "block",
@@ -449,7 +384,7 @@
           "default": null
         },
         "alt": {
-          "default": null
+          "default": ""
         },
         "title": {
           "default": null
@@ -474,18 +409,7 @@
         "file": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "img[src]"
-        },
-        {
-          "tag": "img[src][data-lazy-src]"
-        },
-        {
-          "tag": "img[src][data-uploaded]"
-        }
-      ]
+      }
     },
     "columns": {
       "content": "column+",
@@ -496,12 +420,7 @@
         "id": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"columns\"]"
-        }
-      ]
+      }
     },
     "column": {
       "content": "block+",
@@ -514,12 +433,7 @@
         "width": {
           "default": 0
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"column\"]"
-        }
-      ]
+      }
     },
     "audio": {
       "content": "block*",
@@ -543,14 +457,12 @@
           "default": null
         },
         "blockStyle": {
-          "default": "compact"
+          "default": null
+        },
+        "mini": {
+          "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "audio"
-        }
-      ]
+      }
     },
     "video": {
       "content": "block*",
@@ -588,40 +500,24 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"video\"]"
-        }
-      ]
+      }
     },
     "math_inline": {
       "content": "text*",
       "group": "inline math",
       "inline": true,
       "atom": true,
-      "code": true,
-      "parseDOM": [
-        {
-          "tag": "math_inline"
-        }
-      ]
+      "code": true
     },
     "math_display": {
       "content": "text*",
       "group": "block math",
       "atom": true,
-      "code": true,
-      "parseDOM": [
-        {
-          "tag": "math_display"
-        }
-      ]
+      "code": true
     },
     "mathAnswerBlock": {
       "content": "text*",
       "group": "block",
-      "atom": true,
       "code": true,
       "attrs": {
         "id": {
@@ -630,12 +526,7 @@
         "latex": {
           "default": ""
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "math-answer"
-        }
-      ]
+      }
     },
     "chart-node": {
       "group": "block",
@@ -711,14 +602,9 @@
           "default": null
         },
         "blockStyle": {
-          "default": "compact"
+          "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "chart-node"
-        }
-      ]
+      }
     },
     "graph": {
       "group": "block",
@@ -775,8 +661,14 @@
             "interactions": [
               {
                 "interactionType": "FIND_COORDINATE",
+                "numberFormat": "decimal",
                 "correct": {
-                  "coordinates": [{}],
+                  "coordinates": [
+                    {
+                      "xInString": "",
+                      "yInString": ""
+                    }
+                  ],
                   "interactionType": "FIND_COORDINATE",
                   "interactionSubType": "DOT_POINT"
                 },
@@ -786,7 +678,9 @@
                 "interactionSubType": "DOT_POINT",
                 "snap": {
                   "x": 1,
-                  "y": 1
+                  "y": 1,
+                  "xInString": "1",
+                  "yInString": "1"
                 },
                 "__typename": "GraphDotPointInteraction"
               }
@@ -822,13 +716,7 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "ol[data-type=\"multipleChoiceList\"]",
-          "priority": 51
-        }
-      ]
+      }
     },
     "multipleChoiceWithoutGradingList": {
       "content": "multipleChoiceItem+",
@@ -853,13 +741,7 @@
         "couldBeManuallyGraded": {
           "default": false
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "ul[data-type=\"multipleChoiceWithoutGradingList\"]",
-          "priority": 51
-        }
-      ]
+      }
     },
     "multipleChoiceItem": {
       "content": "(multipleChoiceItemParagraph|fileUploader?|image?)+",
@@ -875,13 +757,7 @@
         "isGrading": {
           "default": true
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "li[data-type=\"multipleChoiceItem\"]",
-          "priority": 51
-        }
-      ]
+      }
     },
     "shortAnswerList": {
       "content": "shortAnswerItem+",
@@ -895,7 +771,7 @@
           "default": "none"
         },
         "educationLevel": {
-          "default": "high"
+          "default": "elementary-1"
         },
         "isAnswerCountHidden": {
           "default": false
@@ -917,14 +793,14 @@
         },
         "blockStyle": {
           "default": "compact"
+        },
+        "fontSize": {
+          "default": null
+        },
+        "fontFamily": {
+          "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "ul[data-type=\"shortAnswerList\"]",
-          "priority": 51
-        }
-      ]
+      }
     },
     "shortAnswerAlternativeItem": {
       "content": "(shortAnswerAlternativeItemParagraph|mathAnswerBlock)+",
@@ -932,13 +808,7 @@
         "id": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "li[data-type=\"shortAnswerAlternativeItem\"]",
-          "priority": 51
-        }
-      ]
+      }
     },
     "shortAnswerAlternativeList": {
       "content": "shortAnswerAlternativeItem*",
@@ -946,13 +816,7 @@
         "id": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "li[data-type=\"shortAnswerAlternativeList\"]",
-          "priority": 51
-        }
-      ]
+      }
     },
     "shortAnswerItem": {
       "content": "(shortAnswerItemParagraph|mathAnswerBlock) shortAnswerAlternativeList",
@@ -964,13 +828,7 @@
         "mode": {
           "default": "text"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "li[data-type=\"shortAnswerItem\"]",
-          "priority": 51
-        }
-      ]
+      }
     },
     "targetingQuizBlock": {
       "content": "block+",
@@ -993,12 +851,7 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"targeting-quiz-block\"]"
-        }
-      ]
+      }
     },
     "blankQuizBlock": {
       "content": "block+|shortAnswerItem+|paragraph+",
@@ -1021,12 +874,7 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"blank-quiz-block\"]"
-        }
-      ]
+      }
     },
     "blankQuizV2Block": {
       "content": "block+",
@@ -1063,13 +911,14 @@
         },
         "orderlessIndexes": {
           "default": [[]]
+        },
+        "charCount": {
+          "default": 4
+        },
+        "isCharacterLimit": {
+          "default": false
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"blank-quiz-block-v2\"]"
-        }
-      ]
+      }
     },
     "matchingQuizBlock": {
       "content": "block+",
@@ -1083,6 +932,9 @@
         "hintOption": {
           "default": null
         },
+        "blankStyle": {
+          "default": "bracket"
+        },
         "studentAnswers": {
           "default": null
         },
@@ -1094,13 +946,11 @@
         },
         "isAnswerRandomlyPlaced": {
           "default": true
+        },
+        "educationLevel": {
+          "default": "elementary-1"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"matching-quiz-block\"]"
-        }
-      ]
+      }
     },
     "selectionQuizBlock": {
       "content": "block+",
@@ -1126,12 +976,7 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"selection-quiz-block\"]"
-        }
-      ]
+      }
     },
     "essay": {
       "content": "block*",
@@ -1154,19 +999,14 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"essay-node\"]"
-        }
-      ]
+      }
     },
     "shortAnswerWithoutGrading": {
-      "content": "block*",
+      "content": "shortAnswerWithoutGradingItem+",
       "group": "block",
-      "inline": false,
       "atom": true,
       "draggable": true,
+      "isolating": true,
       "attrs": {
         "id": {
           "default": null
@@ -1174,6 +1014,9 @@
         "textAlign": {},
         "studentAnswer": {
           "default": null
+        },
+        "studentAnswers": {
+          "default": []
         },
         "enableEmptyStudentAnswer": {
           "default": false
@@ -1186,13 +1029,41 @@
         },
         "couldBeManuallyGraded": {
           "default": false
+        },
+        "fontSize": {
+          "default": null
+        },
+        "fontFamily": {
+          "default": null
+        },
+        "educationLevel": {
+          "default": "elementary-1"
+        },
+        "listItemStyle": {
+          "default": "none"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"shortAnswerWithoutGrading-node\"]"
+      }
+    },
+    "shortAnswerWithoutGradingItem": {
+      "content": "block+",
+      "group": "block",
+      "attrs": {
+        "id": {
+          "default": ""
+        },
+        "mode": {
+          "default": "text"
+        },
+        "fontSize": {
+          "default": null
+        },
+        "fontFamily": {
+          "default": null
+        },
+        "studentAnswer": {
+          "default": ""
         }
-      ]
+      }
     },
     "explanation": {
       "content": "block+",
@@ -1205,12 +1076,7 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"explanation-node\"]"
-        }
-      ]
+      }
     },
     "speaking": {
       "content": "block*",
@@ -1245,13 +1111,14 @@
         },
         "status": {
           "default": null
+        },
+        "category": {
+          "default": "STT_ONLY"
+        },
+        "reference": {
+          "default": ""
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"speaking-node\"]"
-        }
-      ]
+      }
     },
     "englishParagraphBlock": {
       "content": "block+",
@@ -1273,12 +1140,7 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"englishParagraphBlock-node\"]"
-        }
-      ]
+      }
     },
     "classEmbed": {
       "content": "block*",
@@ -1296,12 +1158,7 @@
         "couldBeManuallyGraded": {
           "default": false
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"classEmbed\"]"
-        }
-      ]
+      }
     },
     "toggle": {
       "content": "toggleSummary toggleContent",
@@ -1321,12 +1178,7 @@
         "open": {
           "default": true
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"toggle\"]"
-        }
-      ]
+      }
     },
     "toggleSummary": {
       "content": "inline*",
@@ -1342,12 +1194,7 @@
         "hover": {
           "default": false
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"toggleSummary\"]"
-        }
-      ]
+      }
     },
     "toggleContent": {
       "content": "block+",
@@ -1360,12 +1207,7 @@
         "open": {
           "default": true
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"toggleContent\"]"
-        }
-      ]
+      }
     },
     "sticky": {
       "content": "block+",
@@ -1375,12 +1217,7 @@
         "id": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"sticky\"]"
-        }
-      ]
+      }
     },
     "externalEmbedded": {
       "content": "block*",
@@ -1418,13 +1255,11 @@
         },
         "couldBeManuallyGraded": {
           "default": false
+        },
+        "isAlgeoSubmitComplete": {
+          "default": false
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"externalEmbedded\"]"
-        }
-      ]
+      }
     },
     "drawing": {
       "content": "block+",
@@ -1443,12 +1278,7 @@
         "couldBeManuallyGraded": {
           "default": false
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "div[data-type=\"drawing-node\"]"
-        }
-      ]
+      }
     },
     "lineMatching": {
       "content": "(lineMatchingItemContainer)+",
@@ -1473,12 +1303,7 @@
         "blockStyle": {
           "default": "compact"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "ol[data-type=\"lineMatching\"]"
-        }
-      ]
+      }
     },
     "lineMatchingItemContainer": {
       "content": "(lineMatchingItem)+",
@@ -1490,15 +1315,10 @@
         "listItemStyle": {
           "default": "circle-decimal"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "li[data-type=\"lineMatchingItemContainer\"]"
-        }
-      ]
+      }
     },
     "lineMatchingItem": {
-      "content": "(paragraph|fileUploader?|image?)+",
+      "content": "(paragraph|fileUploader?|image?|multipleChoiceItemParagraph?)+",
       "group": "block",
       "attrs": {
         "id": {
@@ -1510,15 +1330,165 @@
         "studentSelected": {
           "default": false
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "li[data-type=\"lineMatchingItem\"]"
+      }
+    },
+    "table": {
+      "tableRole": "table",
+      "content": "tableRow+",
+      "group": "block",
+      "draggable": true,
+      "isolating": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "alt": {
+          "default": null
+        },
+        "script": {
+          "default": null
+        },
+        "fullWidthEvenly": {
+          "default": null
+        },
+        "resizable": {
+          "default": true
         }
-      ]
+      }
+    },
+    "tableRow": {
+      "tableRole": "row",
+      "content": "(tableCell | tableHeader)*"
+    },
+    "tableCell": {
+      "tableRole": "cell",
+      "content": "block+",
+      "isolating": true,
+      "attrs": {
+        "colspan": {
+          "default": 1
+        },
+        "rowspan": {
+          "default": 1
+        },
+        "colwidth": {
+          "default": null
+        },
+        "backgroundColor": {
+          "default": null
+        },
+        "verticalAlign": {
+          "default": "middle"
+        }
+      }
+    },
+    "tableHeader": {
+      "tableRole": "header_cell",
+      "content": "block+",
+      "isolating": true,
+      "attrs": {
+        "colspan": {
+          "default": 1
+        },
+        "rowspan": {
+          "default": 1
+        },
+        "colwidth": {
+          "default": null
+        },
+        "backgroundColor": {
+          "default": null
+        },
+        "verticalAlign": {
+          "default": "middle"
+        }
+      }
+    },
+    "tableAnswerBlock": {
+      "content": "table",
+      "group": "block",
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "data-toc-id": {
+          "default": null
+        },
+        "hintOption": {
+          "default": "DEFAULT"
+        },
+        "blankStyle": {
+          "default": "bracket"
+        },
+        "isIgnoreSpacing": {
+          "default": true
+        },
+        "studentAnswers": {
+          "default": []
+        },
+        "solution": {
+          "default": false
+        },
+        "educationLevel": {
+          "default": "elementary-1"
+        },
+        "blockStyle": {
+          "default": "compact"
+        },
+        "orderlessBundles": {
+          "default": [[]]
+        },
+        "orderlessIndexes": {
+          "default": [[]]
+        }
+      }
+    },
+    "frameActivityEmbed": {
+      "group": "block",
+      "inline": false,
+      "draggable": true,
+      "attrs": {
+        "id": {
+          "default": null
+        },
+        "title": {
+          "default": null
+        },
+        "sandbox": {
+          "default": false
+        },
+        "mode": {},
+        "learningActivityId": {},
+        "blockStyle": {
+          "default": "compact"
+        },
+        "url": {
+          "default": ""
+        },
+        "childEstimations": {
+          "default": []
+        },
+        "userInput": {
+          "default": {}
+        },
+        "sttId": {
+          "default": null
+        },
+        "audioUrl": {
+          "default": null
+        },
+        "couldBeManuallyGraded": {
+          "default": false
+        },
+        "canAutoSubmit": {
+          "default": false
+        }
+      }
     }
   },
   "marks": {
+    "nowrap": {},
     "link": {
       "inclusive": true,
       "attrs": {
@@ -1534,79 +1504,27 @@
         "class": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "a[href]:not([href *= \"javascript:\" i])"
-        }
-      ]
+      }
     },
     "linkInserting": {},
-    "bold": {
-      "parseDOM": [
-        {
-          "tag": "strong"
-        },
-        {
-          "tag": "b"
-        },
-        {
-          "style": "font-weight"
-        }
-      ]
-    },
+    "bold": {},
     "code": {
       "excludes": "_",
-      "code": true,
-      "parseDOM": [
-        {
-          "tag": "code"
-        }
-      ]
+      "code": true
     },
-    "italic": {
-      "parseDOM": [
-        {
-          "tag": "em"
-        },
-        {
-          "tag": "i"
-        },
-        {
-          "style": "font-style=italic"
-        }
-      ]
-    },
-    "strike": {
-      "parseDOM": [
-        {
-          "tag": "s"
-        },
-        {
-          "tag": "del"
-        },
-        {
-          "tag": "strike"
-        },
-        {
-          "style": "text-decoration",
-          "consuming": false
-        }
-      ]
-    },
+    "italic": {},
+    "strike": {},
     "textStyle": {
       "attrs": {
+        "verticalAlign": {
+          "default": null
+        },
         "fontSize": {},
         "color": {},
         "fontFamily": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "span"
-        }
-      ]
+      }
     },
     "translateNoSpan": {
       "group": "inline",
@@ -1614,42 +1532,15 @@
         "translate": {
           "default": "no"
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "span.no-translate-mark[translate=\"no\"]"
-        }
-      ]
+      }
     },
-    "nowrap": {
-      "parseDOM": [
-        {
-          "tag": "span.nowrap-mark"
-        }
-      ]
-    },
-    "underline": {
-      "parseDOM": [
-        {
-          "tag": "u"
-        },
-        {
-          "style": "text-decoration",
-          "consuming": false
-        }
-      ]
-    },
+    "underline": {},
     "highlight": {
       "attrs": {
         "color": {
           "default": null
         }
-      },
-      "parseDOM": [
-        {
-          "tag": "mark"
-        }
-      ]
+      }
     }
   }
 }
